@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://quizly-revision-backend.vercel.app/api';
+const API_BASE_URL = 'https://llm-course-revision-1.onrender.com/api';
 // const API_BASE_URL = 'http://localhost:4100/api';
 
 const api = axios.create({
