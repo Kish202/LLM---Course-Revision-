@@ -1,19 +1,22 @@
+*auth page*
 
 <img width="1919" height="884" alt="Screenshot 2025-10-09 170715" src="https://github.com/user-attachments/assets/5f626736-7af7-472f-9e17-d2a8950bcf77" />
-##auth page
+
+*dashboard page*
 
 <img width="1906" height="918" alt="Screenshot 2025-10-09 170825" src="https://github.com/user-attachments/assets/cff0e948-94ab-4501-a754-4e66cd96203a" />
-##dashboard page
 
+*chat page*
 <img width="1898" height="868" alt="Screenshot 2025-10-09 185531" src="https://github.com/user-attachments/assets/f24f9433-ddd6-4579-879f-be1ee8111bcf" />
-##chat page
 
+*quiz page*
 
 <img width="1754" height="883" alt="Screenshot 2025-10-09 183340" src="https://github.com/user-attachments/assets/29e73a3b-8cde-40f5-ad41-55a84ed6151d" />
-##quiz page
+
+*progress page*
 
 <img width="1919" height="859" alt="Screenshot 2025-10-09 185426" src="https://github.com/user-attachments/assets/0b6d96b9-520b-45c0-968e-a97dbd2428c6" />
-##progress page
+
 
 # 📚 Quiz Learning App - AI-Powered Study Platform
 
