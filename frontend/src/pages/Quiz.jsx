@@ -369,7 +369,9 @@ const Quiz = () => {
             >
               {question.options.map((option, index) => (
                 <div key={index} className="flex items-center space-x-2 p-3 border rounded-lg hover:bg-gray-50">
-                  <RadioGroupItem value={option} id={`option-${index}`} />
+                {/* i want filling dot of radio to be of blue color */}
+
+                  <RadioGroupItem value={option} id={`option-${index}`} className="text-blue-600 focus-visible:ring-blue-600"  />
                   <Label htmlFor={`option-${index}`} className="flex-1 cursor-pointer">
                     {option}
                   </Label>

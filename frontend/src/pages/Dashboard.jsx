@@ -98,7 +98,7 @@ const Dashboard = () => {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold">Your Coursebooks</h1>
           <p className="text-gray-600 mt-1">Manage your coursebooks and start learning</p>
@@ -106,7 +106,7 @@ const Dashboard = () => {
 
         <Dialog open={uploadDialogOpen} onOpenChange={setUploadDialogOpen}>
           <DialogTrigger asChild>
-            <Button variant="blue_btn" className="cursor-pointer">
+            <Button variant="blue_btn" className="cursor-pointer w-full sm:w-auto">
               <Upload className="h-4 w-4" />
               Upload PDF
             </Button>
