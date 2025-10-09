@@ -6,26 +6,26 @@ const generateQuizFromPDF = async (pdfIds, questionTypes, numberOfQuestions = 10
   try {
     // Get PDFs and their content
     const pdfs = await PDF.find({ _id: { $in: pdfIds } });
-    
+
     if (!pdfs.length) {
       throw new Error('No PDFs found');
     }
-    
+
     // Collect text from chunks
     let contentText = '';
     for (const pdf of pdfs) {
       const pdfText = pdf.chunks.map(chunk => chunk.text).join('\n');
       contentText += `\n\n--- ${pdf.title} ---\n${pdfText}`;
     }
-    
+
     // Limit content to avoid token limits (take first 10000 characters)
     if (contentText.length > 10000) {
       contentText = contentText.slice(0, 10000);
     }
-    
+
     // Build prompt based on question types
     const questionTypesList = questionTypes.join(', ');
-    
+
     const prompt = `Based on the following educational content, generate ${numberOfQuestions} quiz questions.
 
 Question types to generate: ${questionTypesList}
@@ -74,7 +74,7 @@ Make sure questions are educational, clear, and test understanding of key concep
       temperature: 0.7,
       response_format: { type: "json_object" }
     });
-    
+
     const quizData = JSON.parse(response.choices[0].message.content);
     return quizData.questions || [];
   } catch (error) {
@@ -91,13 +91,40 @@ const evaluateAnswer = (question, userAnswer) => {
       explanation: question.explanation
     };
   } else {
-    // For SAQ and LAQ, use simple string matching (can be improved with AI)
-    const correctLower = question.correctAnswer.toLowerCase().trim();
+    // SAQ and LAQ
+
+    // Fix 1: Check for empty answers
+    if (!userAnswer || userAnswer.trim() === '') {
+      return {
+        isCorrect: false,
+        explanation: question.explanation
+      };
+    }
+
     const userLower = userAnswer.toLowerCase().trim();
-    
-    // Simple check - contains key terms
-    const isCorrect = correctLower.includes(userLower) || userLower.includes(correctLower);
-    
+
+    // Fix 2: Require minimum length
+    if (userLower.length < 3) {
+      return {
+        isCorrect: false,
+        explanation: question.explanation
+      };
+    }
+
+    const correctLower = question.correctAnswer.toLowerCase().trim();
+
+    // Fix 3: Require substantial overlap (not just substring)
+    const userWords = userLower.split(/\s+/);
+    const correctWords = correctLower.split(/\s+/);
+
+    // Check if at least 50% of correct answer words are in user answer
+    const matchedWords = correctWords.filter(word =>
+      userWords.some(userWord => userWord.includes(word) || word.includes(userWord))
+    );
+
+    const matchPercentage = matchedWords.length / correctWords.length;
+    const isCorrect = matchPercentage >= 0.5; // At least 50% match
+
     return {
       isCorrect: isCorrect,
       explanation: question.explanation
