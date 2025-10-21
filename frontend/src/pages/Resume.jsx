@@ -775,7 +775,7 @@ const ResumeReview = () => {
 
                     {reviewHistory.length > 0 ? (
                       <div className="space-y-3">
-                        {reviewHistory.slice(0, 5).map((review, index) => (
+                        {reviewHistory.slice(0, 5).map((review) => (
                           <div 
                             key={review._id} 
                             className="flex items-center justify-between p-4 rounded-lg border hover:bg-slate-50 cursor-pointer"
