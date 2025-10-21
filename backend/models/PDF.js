@@ -19,23 +19,34 @@ const pdfSchema = new mongoose.Schema({
     required: true
   },
   cloudinaryId: {
-    type: String  // Store Cloudinary public_id for deletion
+    type: String
   },
   processingError: {
-    type: String  // Store any processing errors
+    type: String
   },
   isSeeded: {
     type: Boolean,
     default: false
   },
+  // NEW: Resume flag
+  isResume: {
+    type: Boolean,
+    default: false
+  },
+  // NEW: Resume metadata
+  resumeMetadata: {
+    targetRole: String,
+    industry: String,
+    yearsOfExperience: Number,
+    additionalContext: String
+  },
   totalPages: {
     type: Number
   },
-  // Store chunks for RAG
   chunks: [{
     text: String,
     pageNumber: Number,
-    embedding: [Number] // OpenAI embeddings
+    embedding: [Number]
   }],
   uploadedAt: {
     type: Date,

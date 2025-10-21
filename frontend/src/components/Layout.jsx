@@ -1,7 +1,7 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { Button } from '@/components/ui/button';
-import { BookOpen, MessageSquare, BarChart3, LogOut, Home, Brain } from 'lucide-react';
+import { BookOpen, MessageSquare, BarChart3, LogOut, Home, Brain, FileText, LineChart } from 'lucide-react';
 
 const Layout = () => {
   const { user, logout } = useAuth();
@@ -12,6 +12,7 @@ const Layout = () => {
     { path: '/quiz', label: 'Quiz', icon: BookOpen },
     { path: '/chat', label: 'Chat', icon: MessageSquare },
     { path: '/progress', label: 'Progress', icon: BarChart3 },
+    { path: '/resume', label: 'Resume Insights', icon: FileText },
   ];
 
   return (
