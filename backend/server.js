@@ -48,6 +48,7 @@ app.use(passport.session());
 require('./config/passport');
 
 // Routes
+app.use('/api/resume',require('./routes/resume'));
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/pdf', require('./routes/pdf'));
 app.use('/api/quiz', require('./routes/quiz'));
