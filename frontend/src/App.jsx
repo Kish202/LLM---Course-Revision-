@@ -6,7 +6,7 @@ import Quiz from './pages/Quiz';
 import Chat from './pages/Chat';
 import UserProgress from './pages/UserProgress';
 import Layout from './components/Layout';
-
+import ResumeReview from './pages/Resume';
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useAuth();
 
@@ -37,6 +37,7 @@ function AppRoutes() {
         <Route path="quiz" element={<Quiz />} />
         <Route path="chat" element={<Chat />} />
         <Route path="progress" element={<UserProgress  />} />
+        <Route path="resume" element={<ResumeReview />} />
       </Route>
     </Routes>
   );
