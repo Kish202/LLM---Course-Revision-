@@ -13,8 +13,9 @@ const PrivateRoute = ({ children }) => {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-screen">
-        <div className="text-lg">Loading...
-        P.S {Our Server is on render it's a sort of sleepy stuff so might take 50 seconds to wake up}</div>
+        <div className="text-lg flex flex-col">Loading...
+       <div> P.S {Our Server is on render it's a sort of sleepy stuff so might take 50 seconds to wake up} </div>
+        </div>
       </div>
     );
   }
