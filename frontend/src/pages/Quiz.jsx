@@ -138,8 +138,10 @@ const Quiz = () => {
   };
 
   if (!quiz) {
+
+
     return (
-      <div className="max-w-3xl mx-auto space-y-4">
+      <div className="max-w-3xl mx-auto space-y-4 mt-3">
         {error && (
           <Alert variant="destructive">
             <AlertDescription>{error}</AlertDescription>
@@ -244,7 +246,7 @@ const Quiz = () => {
 
   if (submitted && result) {
     return (
-      <div className="max-w-3xl mx-auto space-y-6">
+      <div className="max-w-3xl mx-auto space-y-6  ">
         <Card>
           <CardHeader>
             <CardTitle>Quiz Results</CardTitle>

@@ -77,7 +77,7 @@ const UserProgress = () => {
     <div className="space-y-8">
       <div>
         {/* Overview Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4 mt-3">
           <div className="rounded-xl border p-6">
             <div className="flex items-center justify-between">
               <div>

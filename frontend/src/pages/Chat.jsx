@@ -138,7 +138,7 @@ const Chat = () => {
 
   return (
     <div className="h-[80vh] max-w-full">
-      <Tabs defaultValue="chat" className="h-full flex flex-col">
+      <Tabs defaultValue="chat" className="h-full flex flex-col mt-3">
         <TabsList className="w-fit">
           <TabsTrigger value="chat" className="px-4 sm:px-6 text-sm">Chat</TabsTrigger>
           <TabsTrigger value="pdf" className="px-4 sm:px-6 text-sm">PDF Viewer</TabsTrigger>

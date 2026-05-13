@@ -199,7 +199,7 @@ const ResumeReview = () => {
       {/* ── Header ────────────────────────────────────────────────────────── */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">Resume Review Dashboard</h1>
+          <h1 className="text-2xl pt-1 font-bold text-slate-900">Resume Review Dashboard</h1>
           <p className="text-slate-600 mt-1">Upload, analyze, and improve your resumes with AI-powered insights</p>
         </div>
         <button

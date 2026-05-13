@@ -100,7 +100,7 @@ const Dashboard = () => {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-1">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-3">
         <div>
           <h1 className="text-2xl font-bold">Your Coursebooks</h1>
           <p className="text-gray-600 mt-1">Manage your coursebooks and start learning</p>
