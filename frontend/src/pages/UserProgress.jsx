@@ -120,7 +120,7 @@ const UserProgress = () => {
                 <p className="text-sm text-slate-600 mb-1">Performance</p>
                 <Badge 
                   variant={dashboard.averageScore >= 70 ? 'default' : 'destructive'}
-                  className="text-sm px-3 py-1 mt-1"
+                  className="text-sm px-3 py-1 mt-1 opacity-80"
                 >
                   {dashboard.averageScore >= 80 ? 'Excellent' : 
                    dashboard.averageScore >= 70 ? 'Good' :
@@ -195,6 +195,7 @@ const UserProgress = () => {
                           <td className="px-6 py-4 text-right">
                             <Badge 
                               variant={attempt.score >= 70 ? 'outline' : attempt.score >= 50 ? 'secondary' : 'destructive'}
+                              className="opacity-80"
                             >
                               {attempt.score}%
                             </Badge>

@@ -56,8 +56,8 @@ const Layout = () => {
       </header>
 
       {/* Navigation */}
-      <nav className="bg-white border-b fixed top-[65px] left-0 right-0 z-40">
-        <div className="w-full max-w-7xl mx-auto px-2 sm:px-4">
+      <nav className="bg-white border-b fixed top-[73px] left-0 right-0 z-40 ">
+        <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 pt-2">
           <div className="flex flex-wrap justify-between sm:justify-start">
             {navItems.map((item) => {
               const Icon = item.icon;

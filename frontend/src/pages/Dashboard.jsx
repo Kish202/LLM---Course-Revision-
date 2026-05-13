@@ -47,6 +47,7 @@ const Dashboard = () => {
     }
   };
 
+
   const handleUpload = async () => {
     if (!selectedFile) {
       setError('Please select a file');
@@ -76,6 +77,7 @@ const Dashboard = () => {
     }
   };
 
+
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this PDF?')) {
       return;
@@ -92,15 +94,15 @@ const Dashboard = () => {
   };
 
   if (loading) {
-    return <div className="text-center py-8">Loading...</div>;
+    return <div className="text-center py-8 justify-content items-center">Loading...</div>;
   }
 
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-1">
         <div>
-          <h1 className="text-3xl font-bold">Your Coursebooks</h1>
+          <h1 className="text-2xl font-bold">Your Coursebooks</h1>
           <p className="text-gray-600 mt-1">Manage your coursebooks and start learning</p>
         </div>
 
