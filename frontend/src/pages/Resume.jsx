@@ -168,7 +168,7 @@ const ResumeReview = () => {
       setResumes(response.data.resumes);
     } catch (error) {
       console.error('Error loading resumes:', error);
-      alert('Failed to load resumes');
+   //   alert('Failed to load resumes');
     } finally {
       setLoading(prev => ({ ...prev, resumes: false }));
     }
